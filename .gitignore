@@ -30,8 +30,8 @@ target\**
 target/classes/application.properties
 target/classes/db/migration/mysql/V1__Evolvice_car.sql
 *.MF
-target/classes/META-INF/maven/com.evolvice/evolvice/pom.properties
-target/classes/META-INF/maven/com.evolvice/evolvice/pom.xml
+target/classes/META-INF/maven/com.scalyfin/evolvice/pom.properties
+target/classes/META-INF/maven/com.scalyfin/evolvice/pom.xml
 
 /target/
 # Ignore child project's targets as well
