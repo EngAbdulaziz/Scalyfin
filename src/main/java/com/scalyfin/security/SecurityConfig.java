@@ -14,13 +14,14 @@ public class SecurityConfig  extends WebSecurityConfigurerAdapter {
 	
 	 @Override
 	    protected void configure(HttpSecurity http) throws Exception {
-		 http.csrf().disable()
-         .authorizeRequests()
+		http.csrf().disable()
+		.authorizeRequests()
 			.antMatchers(HttpMethod.GET, "/actuator/**").permitAll()
 			.antMatchers(HttpMethod.GET, "/actuator/info").permitAll()
 			.antMatchers(HttpMethod.GET, "/actuator/health").permitAll()
 			.antMatchers(HttpMethod.GET, "/v2/api-docs").permitAll()
-			.antMatchers(HttpMethod.POST, "/scalyfin/car/v1/**").permitAll();
+			.antMatchers(HttpMethod.POST, "scalyfin/unitType/v1/**").permitAll()
+		    .antMatchers(HttpMethod.GET , "scalyfin/unitType/v1/**").permitAll();
             //.anyRequest().authenticated();
 	 }
 

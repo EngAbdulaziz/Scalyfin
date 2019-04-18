@@ -17,8 +17,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @SpringBootApplication
 @EnableSwagger2
-@ComponentScan({ "com.scalyfin.service", "com.scalyfin.controller", "com.scalyfin.security", "com.scalyfin.facade",
-		"com.scalyfin.exception" })
+@ComponentScan({ "com.scalyfin.service", "com.scalyfin.controller", "com.scalyfin.security", "com.scalyfin.exception" })
 @EnableJpaRepositories("com.scalyfin.repository")
 @EntityScan("com.scalyfin.model.entity")
 @Configuration
@@ -27,13 +26,11 @@ public class ScalyfinServer {
 	public static void main(String[] args) {
 		SpringApplication.run(ScalyfinServer.class, args);
 	}
-	
+
 	@Bean
-    public Docket api() { 
-        return new Docket(DocumentationType.SWAGGER_2)  
-          .select()                                  
-          .apis(RequestHandlerSelectors.withClassAnnotation(RestController.class))              
-          .paths(PathSelectors.any())                          
-          .build();                                           
-    }
+	public Docket api() {
+		return new Docket(DocumentationType.SWAGGER_2).select()
+				.apis(RequestHandlerSelectors.withClassAnnotation(RestController.class)).paths(PathSelectors.any())
+				.build();
+	}
 }
