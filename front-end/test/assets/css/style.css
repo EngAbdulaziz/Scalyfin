@@ -1,0 +1,658 @@
+@font-face {
+    font-family: 'Emirates-light';
+    src: url("../fonts/Emirates-Light.ttf") format("truetype");;
+    font-style: normal
+}
+
+@font-face {
+    font-family: 'Emirates';
+    src: url("../fonts/Emirates-Medium.ttf") format("truetype");;
+    font-style: normal
+}
+
+@font-face {
+    font-family: 'Emirates-Bold';
+    src: url("../fonts/Emirates-Bold.ttf") format("truetype");;
+    font-style: normal
+}
+
+/************************************************************/
+html, body {
+    font-family: 'Emirates';
+    margin: 0;
+    background-color: #ffffff;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+a:focus {
+    outline: none !important;
+}
+
+a.dimmed {
+    pointer-events: none;
+}
+
+button:focus {
+    text-decoration: none;
+    outline: none !important;
+}
+
+.loader {
+    width: 100%;
+    text-align: center;
+    padding: 50px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.loader i {
+    color: #e60000;
+    font-size: 50px;
+
+}
+
+.col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-xs-1, .col-xs-10, .col-xs-11, .col-xs-12, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9 {
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+.dashboardHeader {
+    background-color: #000000;
+    padding: 5px 10px;
+    position: relative;
+    border-bottom: 8px solid #979797
+}
+
+.dashboardHeader_plane {
+    position: absolute;
+    left: 160px;
+    top: -7px;
+}
+
+.dashboardHeader_name {
+    color: #ffffff;
+    font-weight: bold;
+    text-align: center;
+    padding: 15px 0;
+    margin: 0;
+    font-family: 'Emirates-light';
+}
+
+.dashboardHeader_date {
+    color: #ffffff;
+    text-align: right;
+    padding: 20px 0;
+    margin: 0;
+    font-size: 20px;
+    font-family: 'Emirates-light';
+}
+
+.dashboardClock {
+    float: left;
+    width: 24%;
+    background-image: url("../imgs/clock-bg.png");
+    background-repeat: no-repeat;
+    padding: 10px 15px;
+    height: 497px;
+    background-size: 100% 100%;
+}
+
+.dashboardClock_title {
+    text-transform: uppercase;
+    text-align: center;
+
+    line-height: 32px;
+    color: #979797;
+    font-weight: bold;
+}
+
+.dashboardResult {
+    margin-top: 10px;
+}
+
+.dashboardPerformance {
+    float: left;
+    width: 76%;
+    background: rgb(56, 56, 56);
+    background: linear-gradient(180deg, rgba(56, 56, 56, 1) 0%, rgba(56, 56, 56, 1) 0%, rgba(0, 0, 0, 1) 100%);
+    border-radius: 0 8px 8px 0;
+    margin-left: -1px;
+}
+
+.dashboardPerformance_title {
+    margin: 0;
+    text-align: center;
+    background-color: #E32A2E;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 13px 0;
+    font-size: 32px;
+    color: #ffffff;
+    border-radius: 0 8px 0 0;
+}
+
+.dashboardPerformance_list {
+    padding: 4px 15px;
+    width: 100%;
+    float: left;
+    margin-bottom: 0;
+}
+
+.dashboardPerformance_list li {
+    padding: 15px 10px;
+    width: 100%;
+    float: left;
+    border-bottom: 1px solid rgba(216, 216, 216, 0.3);
+}
+
+.dashboardPerformance_list li:last-child {
+    border-bottom: none;
+}
+
+.dashboardPerformance_listIcon {
+    width: 15%;
+    float: left;
+}
+
+.dashboardPerformance_listIcon img {
+    width: 100%;
+}
+
+.dashboardPerformance_listMeta {
+    width: 70%;
+    float: left;
+    padding-left: 15px;
+}
+
+.dashboardPerformance_listStatistics {
+    width: 15%;
+    float: left;
+}
+
+.dashboardPerformance_userMeta {
+    float: left;
+    width: 100%;
+}
+
+.dashboardPerformance_userMeta img {
+    width: 21%;
+    float: left;
+    border-radius: 50%;
+}
+
+.dashboardPerformance_userMeta p {
+    width: 79%;
+    float: left;
+    text-align: right;
+    color: #ffffff;
+    font-family: Emirates-Bold;
+    padding: 14px 0;
+    font-size: 27px;
+}
+
+.dashboardPerformance_progressMeta {
+    float: left;
+    width: 100%;
+    margin: 9px 0;
+}
+
+.dashboardPerformance_statisticsValue {
+    font-family: Emirates-Bold;
+    padding: 13px 0;
+    text-align: center;
+    color: #ffffff;
+    font-size: 28px;
+    margin-bottom: 0;
+}
+
+
+.dashboardPerformance_statisticsStatus {
+    text-align: center;
+    font-size: 12.5px;
+    margin-bottom: 0;
+    margin-top: 20px;
+}
+
+
+.down .dashboardPerformance_statisticsStatus {
+    color: #E32A2E;
+}
+
+
+.up .dashboardPerformance_statisticsStatus {
+    color: #0DAE51;
+}
+
+.rankSlider {
+    float: left;
+    width: 100%;
+    padding-bottom: 35px;
+    border-radius: 0 8px 8px 8px;
+}
+
+.rankSlider_red {
+    border: 3px solid #E32A2E;
+}
+
+.rankSlider_blue {
+    border: 3px solid #1690CC;
+}
+
+.rankSlider_title {
+    margin: 0;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 13px 0;
+    color: #ffffff;
+    font-size: 32px;
+}
+
+.rankSlider_red .rankSlider_title {
+    background-color: #E32A2E;
+}
+
+.rankSlider_blue .rankSlider_title {
+    background-color: #1690CC;
+}
+
+.rankSlider_resultList {
+    float: left;
+    width: 100%;
+    padding: 5px 50px;
+}
+
+.rankSlider_resultList li {
+    float: left;
+    width: 100%;
+    padding: 7px 0 7px;
+    border-bottom: 1px solid #D8D8D8;
+}
+
+.rankSlider_resultList li:last-child {
+    border-bottom: none;
+}
+
+.rankSlider_resultList img {
+    float: left;
+    width: 15%;
+    border-radius: 50%;
+    min-width: 59px;
+    min-height: 60px;
+}
+
+.rankSlider_resultList p {
+    float: left;
+    width: 85%;
+    color: #42505C;
+    font-weight: bold;
+    padding: 10px 0 10px 10px;
+    font-size: 20px;
+    line-height: 34px;
+    margin: 0;
+}
+
+.rankSlider_resultList .pointsValue {
+    font-size: 32px;
+    float: right;
+    margin-right: 3px;
+}
+
+.rankSlider_resultList .pointsLabel {
+    font-size: 18px;
+    float: right;
+    padding: 0 3px;
+}
+
+.rankSlider_red .rankSlider_resultList .pointsValue {
+    color: #E32A2E;
+}
+
+.rankSlider_red .rankSlider_resultList .pointsLabel {
+    color: #E32A2E;
+}
+
+
+.rankSlider .carousel-indicators {
+    bottom: -41px;
+    margin-bottom: 0;
+    left: 0;
+    width: 100%;
+    margin-left: 0;
+    border-top: 3px solid #e5373b;
+}
+
+rankSlider_red .carousel-indicators {
+    border-top: 3px solid #e5373b;
+}
+
+.rankSlider_blue .carousel-indicators {
+    border-top: 3px solid #1690CC;
+}
+
+.rankSlider .carousel-indicators li {
+    margin: 1px 0;
+    border-radius: 0;
+    text-indent: 0;
+    width: 33.3%;
+    height: 45px;
+    border-right: 1px solid #E8EAF4;
+    line-height: 43px;
+    position: relative;
+    margin-left: -6px !important;
+    font-size: 18px;
+    color: #000;
+    font-family: Emirates-Bold;
+}
+
+.rankSlider .carousel-indicators li:last-child {
+    border-right: none;
+}
+
+.progressBackground {
+
+    background-color: #979797;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0px;
+    height: 100%;
+    -webkit-transition: width 60s linear;
+    -moz-transition: width 60s linear;
+    -o-transition: width 60s linear;
+    transition: width 60s linear;
+    z-index: 2;
+    visibility: hidden;
+}
+
+.progressLabel {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    z-index: 3;
+
+}
+
+.rankSlider .carousel-indicators li.active .progressBackground {
+    width: 100%;
+    visibility: visible;
+}
+
+.detailedSection {
+    margin-top: 15px;
+}
+
+
+.activitySlider {
+    float: left;
+    width: 100%;
+    border-radius: 0 8px 8px 8px;
+    border: 3px solid #E32A2E;
+}
+
+.activitySlider_title {
+    background-color: #E32A2E;
+    margin: 0;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 13px 0;
+    color: #ffffff;
+    font-size: 32px;
+}
+
+.activitySlider_list {
+    padding: 5px;
+    float: left;
+    width: 100%;
+    height: 900px !important;
+    overflow: hidden;
+}
+
+.activitySlider_list li {
+    padding: 5px;
+    float: left;
+    width: 100%;
+    border-bottom: 1px solid #D8D8D8;
+}
+
+.activitySlider_list li:last-child {
+    border-bottom: none;
+}
+
+.activitySlider_itemMeta {
+    float: left;
+    width: 40%;
+}
+
+.activitySlider_itemStatistics {
+    float: left;
+    width: 60%;
+}
+
+.activitySlider_itemMeta img {
+    float: left;
+    width: 26%;
+    border-radius: 50%;
+}
+
+.activitySlider_itemStatistics img {
+    float: left;
+    width: 15%;
+}
+
+.activitySlider_itemMeta p {
+    float: left;
+    width: 74%;
+    color: #42505C;
+    font-weight: bold;
+    padding-left: 10px;
+    line-height: 60px;
+    font-size: 18px;
+    margin-bottom: 0;
+}
+
+.activitySlider_itemStatistics p {
+    float: left;
+    width: 85%;
+    color: #42505C;
+    font-weight: bold;
+    line-height: 60px;
+    font-size: 16px;
+}
+
+
+.activitySlider_statisticsStatus {
+    color: #858585;
+}
+
+.activitySlider_statisticsPoints {
+    color: #E32A2E;
+}
+
+.casesStatistics {
+    width: 25%;
+    float: left;
+}
+
+.rankSlider_blue .rankSlider_resultList .casesValue {
+    color: #1690CC;
+    font-weight: bold;
+    width: 100%;
+    font-size: 18px;
+    margin: 0;
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 0;
+}
+
+.rankSlider_blue .rankSlider_resultList .casesLabel {
+    color: #1690CC;
+    width: 100%;
+    font-size: 10px;
+    margin-bottom: 0;
+    text-align: center;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+
+.caseSlider {
+    float: left;
+    width: 100%;
+    padding-bottom: 35px;
+    border-radius: 0 8px 8px 8px;
+    border: 3px solid #1690CC;
+}
+
+.caseSlider_title {
+    margin: 0;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 13px 0;
+    color: #ffffff;
+    font-size: 32px;
+    background-color: #1690CC;
+}
+
+.caseSlider_resultList {
+    float: left;
+    width: 100%;
+    padding: 5px 25px;
+}
+
+.caseSlider_resultList li {
+    float: left;
+    width: 100%;
+    padding: 7px 0 7px;
+    border-bottom: 1px solid #D8D8D8;
+}
+
+.caseSlider_resultList li:last-child {
+    border-bottom: none;
+}
+
+.caseSlider_resultList img {
+    float: left;
+    width: 15%;
+    border-radius: 50%;
+}
+
+.caseSlider_resultList p {
+    float: left;
+    width: 85%;
+    color: #42505C;
+    font-weight: bold;
+    padding: 10px 0 10px 10px;
+    font-size: 20px;
+    line-height: 34px;
+    margin: 0;
+}
+
+.caseSlider .caseSlider_resultList .casesValue {
+    color: #1690CC;
+    font-weight: bold;
+    width: 100%;
+    font-size: 40px;
+    margin: 0;
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 0;
+    line-height: 28px;
+}
+
+.caseSlider .caseSlider_resultList .casesLabel {
+    color: #1690CC;
+    width: 100%;
+    font-size: 18px;
+    margin-bottom: 0;
+    text-align: center;
+    padding-top: 0;
+    padding-bottom: 0;
+    line-height: 20px;
+}
+
+.caseSlider .carousel-indicators {
+    bottom: -41px;
+    margin-bottom: 0;
+    left: 0;
+    width: 100%;
+    margin-left: 0;
+    border-top: 3px solid #1690CC;
+}
+
+.caseSlider .carousel-indicators li {
+    margin: 1px 0;
+    border-radius: 0;
+    text-indent: 0;
+    width: 33.3%;
+    height: 45px;
+    border-right: 1px solid #E8EAF4;
+    line-height: 43px;
+    position: relative;
+    margin-left: -6px !important;
+    font-size: 18px;
+    color: #000;
+    font-family: Emirates-Bold;
+}
+
+.caseSlider .carousel-indicators li:last-child {
+    border-right: none;
+}
+
+.caseSlider .carousel-indicators li.active .progressBackground {
+    width: 100%;
+    visibility: visible;
+}
+
+.caseSlider_resultList p.caseName {
+    width: 60%;
+}
+
+.progress {
+    height: 18px;
+    padding: 2px 1px;
+    border-radius: 0;
+    position: relative;
+    margin-bottom: 0;
+}
+
+.progress-bar {
+    transition-duration: 3s;
+}
+
+.progress:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(../imgs/icons/progressbar1.png);
+    z-index: 74;
+}
+
+.progressBarBackground {
+    width: 100%;
+    height: 100%;
+    background-color: #57595b;
+}
+
+
+.down .progress-bar {
+    background-color: #e32a2e;
+}
+
+.up .progress-bar {
+    background-color: #0dae51;
+}
