@@ -1,7 +1,8 @@
 var listApp = angular.module('list', ['ui.router']);
-listApp.config(function ($stateProvider, $urlRouterProvider, $qProvider) {
+listApp.config(function ($stateProvider, $urlRouterProvider, $qProvider, $httpProvider) {
     $qProvider.errorOnUnhandledRejections(false);
     $urlRouterProvider.otherwise('/list');
+	$httpProvider.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
     //$urlRouterProvider.when('', '');
     $stateProvider
 
