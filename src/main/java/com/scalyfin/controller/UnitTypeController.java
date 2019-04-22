@@ -18,7 +18,7 @@ import com.scalyfin.exception.ScalyfinExecption;
 import com.scalyfin.model.dto.UnitTypeDto;
 import com.scalyfin.service.UnitTypeService;
 
-@CrossOrigin
+@CrossOrigin("*")
 @RestController
 @RequestMapping("/scalyfin/unitType/v1")
 public class UnitTypeController {
@@ -26,34 +26,31 @@ public class UnitTypeController {
 	@Autowired
 	private UnitTypeService unitTypeService;
 
-	@CrossOrigin
 	@PostMapping(value = "/", consumes = "application/json; charset=UTF-8", produces = "application/json; charset=UTF-8")
 	public ResponseEntity<Integer> addNewUnitType(@RequestBody UnitTypeDto unitTypeDto) throws ScalyfinExecption {
 		return new ResponseEntity<Integer>(unitTypeService.addNewUnitType(unitTypeDto), HttpStatus.CREATED);
 	}
 
-	@CrossOrigin
 	@GetMapping(value = "/", consumes = "application/json; charset=UTF-8", produces = "application/json; charset=UTF-8")
 	public ResponseEntity<List<UnitTypeDto>> getAllUnitType() throws ScalyfinExecption {
 		return new ResponseEntity<List<UnitTypeDto>>(unitTypeService.getAllUnitTypes(), HttpStatus.OK);
 	}
 
-	@CrossOrigin
 	@GetMapping(value = "/{id}", consumes = "application/json; charset=UTF-8", produces = "application/json; charset=UTF-8")
 	public ResponseEntity<UnitTypeDto> getUnitTypeById(@PathVariable Integer id) throws ScalyfinExecption {
 		return new ResponseEntity<UnitTypeDto>(unitTypeService.getUnitTypeById(id), HttpStatus.OK);
 	}
-	
+
 	@DeleteMapping(value = "/{id}")
 	public ResponseEntity<?> deleteUnitType(@PathVariable Integer id) throws ScalyfinExecption {
 		unitTypeService.deleteUbnitType(id);
 		return new ResponseEntity<>(HttpStatus.NO_CONTENT);
 	}
-	
+
 	@DeleteMapping(value = "softDelete/{id}")
 	public ResponseEntity<?> softDeleteUnitType(@PathVariable Integer id) throws ScalyfinExecption {
 		unitTypeService.softDeleteUbnitType(id);
 		return new ResponseEntity<>(HttpStatus.NO_CONTENT);
 	}
-	
+
 }
